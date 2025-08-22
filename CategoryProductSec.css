@@ -69,105 +69,162 @@
 
 }
 
-/*Product Section*/
 
-h2{
-    font-size: 2rem;
-    line-height: 4rem;
-    color:  var(--light-black);
-    font-weight: 500;
-    text-align: center;
-}
-.line{
-    background:  var(--primary-clr);
-    width: 60px;
-    height: 2.5px;
-    margin: auto;
+.section {
+  padding: 50px 0;
+  background: #f8f8f8;
 }
 
-
-.card-container{
-   
-    justify-content: center;
-    margin-top: 3rem;
-    text-align: center;
-   
+.section h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 10px;
 }
 
-.card{
-    border-right: 1px solid #efefef;
-    flex: 1;
-    padding-block: 3.1rem;
-    margin-bottom: 2rem;
-    transition: all .3s ease-in-out;
-    position: relative;
-    height: 400px;
+.section .line {
+  width: 80px;
+  height: 4px;
+  background: #333;
+  margin: 0 auto 40px;
+}
+
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 0 20px;
+}
+/* Section Container */
+.section {
+  padding: 50px 0;
+  background: #f8f8f8;
+}
+
+.section h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.section .line {
+  width: 80px;
+  height: 4px;
+  background: #333;
+  margin: 0 auto 40px;
+}
+
+/* Product Grid - 4 per row on large screens */
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 equal columns */
+  gap: 20px;
+  padding: 0 20px;
+}
+
+/* Responsive: 2 columns on medium, 1 on small screens */
+@media (max-width: 992px) {
+  .card-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 576px) {
+  .card-container {
+    grid-template-columns: 1fr;
+  }
 }
 
 
-
-
-.card:hover{
-    box-shadow: 
-    0px 5px 19px 1px rgba(36, 11, 12, .15);
-    z-index: 3;
-    /
+/* Product Card */
+.card {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative; 
 }
 
-.card-content{
-   
-     padding: 0 3rem;;
-}
-
-
-
-.title{
-    font-size: 1rem;
-    color: var(--light-black);
-    line-height: 1.7rem;
-    font-weight: 500;
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0,0,0,0.1);
 }
 
 .card img {
   width: 100%;
-  height: 250px;        /* fix card image height */
-  object-fit: cover;    /* crop to fit without distortion */
+  height: auto;
   display: block;
 }
 
-
-.price{
-    margin-top: 1rem;
+/* Card Content */
+.card-content {
+  padding: 15px;
+  text-align: center;
 }
 
-del{
-    color: #c5c5c5;
+.card-content .title {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 10px;
 }
 
-.amount{
-    font-size: 1.1rem;
-    font-weight: 600;
+.card-content .price {
+  font-size: 1.1rem;
+  margin-bottom: 15px;
 }
 
-.add-to-cart{
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 100%;
-    transform: translateY(10px);
-    opacity: 0;
-    visibility: hidden;
-    transition:  all .3s ease-in-out;
+.card-content .price del {
+  color: #888;
+  margin-right: 8px;
 }
 
-.card:hover .add-to-cart{
-    transform: translateY(0);
-    opacity: 1;
-    visibility: visible;
+.card-content .amount {
+  color: #222;
+  font-weight: bold;
 }
 
-.sale::before
-.new::before{
+/* Add to Cart Button */
+.add-to-cart {
+  background: rgb(244, 30, 30); /* default black */
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+  transition: background 0.3s ease;
+}
+
+/* Hover: stays black on hover */
+.add-to-cart:hover {
+  background: rgb(237, 25, 25);
+}
+
+/* Active (when pressed): turns red */
+.add-to-cart:active {
+  background: rgb(11, 11, 11);
+}
+
+/* Optional: fade-in effect only on hover over card */
+.card .add-to-cart {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.card:hover .add-to-cart {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.sale::before,
+.new::before
+{
+    
     position: absolute;
     top: 20px;
     left:20px;
@@ -184,4 +241,17 @@ del{
 .sale::before{
     content:'Sale' ;
     background: var(--primary-clr);
+}
+
+/* Responsive*/
+@media (max-width: 768px) {
+  .card-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .card-container {
+    grid-template-columns: 1fr;
+  }
 }
