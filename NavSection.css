@@ -130,6 +130,7 @@ span,
 
 .navlist{
     gap:2.5rem;
+    transition: transform .3s ease-in-out;
 }
 
 .nav-icon{

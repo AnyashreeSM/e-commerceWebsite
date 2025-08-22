@@ -1,52 +1,70 @@
-form{
-    gap:3rem;
-}
-form h3{
-    font-size: 1.4rem;
-
+form {
+  gap: 3rem;
 }
 
-.input-container{
-    flex:1;
-    align-items: stretch;
+form h3 {
+  font-size: 1.4rem;
 }
 
-#email{
-    border:none;
-    flex:1;
-    font-size: 1rem;
-    padding-left: 1.1rem;
+.input-container {
+  flex: 1;
+  align-items: stretch;
 }
 
-#email:focus{
-    outline:none;
-
+#email {
+  border: none;
+  flex: 1;
+  font-size: 1rem;
+  padding-left: 1.1rem;
 }
 
-.social-icons{
-    gap:1.2rem;
-    justify-content: flex-end;
-
+#email:focus {
+  outline: none;
 }
 
-.media{
-    font-size: 1.2rem;
-    color:var(--light-black)
+.social-icons {
+  gap: 1.2rem;
+  justify-content: flex-end;
 }
 
-
-/*FOOTER Section*/
-
-
-.footer-list{
-    flex:1;
-    padding-block: 1rem;
+.media {
+  font-size: 1.2rem;
+  color: var(--light-black);
 }
 
-.footer-link{
-    font-size: .9rem;
-    text-transform: capitalize;
-    font-weight: 500;
-    color: var(--light-black);
-    line-height: 2.25rem;
+/* FOOTER Section */
+.footer-container {
+  padding-bottom: 3rem;
+}
+
+.footer-list {
+  flex: 1;
+  padding-block: 1rem;
+  flex-basis: 200px;
+}
+
+.footer-link {
+  font-size: 0.9rem;
+  text-transform: capitalize;
+  font-weight: 500;
+  color: var(--light-black);
+  line-height: 2.25rem;
+}
+
+.footer-logo {
+  margin-bottom: 1rem;
+}
+
+.detail {
+  font-size: 0.95rem;
+  line-height: 1.75rem;
+  color: #6e6e6e;
+}
+
+.footer-bottom {
+  padding-block: 0.85rem;
+  text-align: center;
+  color: #6e6e6e;
+  border-top: 0.065rem solid #bbb;
+  font-size: 0.9rem;
 }
