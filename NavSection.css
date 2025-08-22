@@ -64,7 +64,10 @@ img{
 .wrap{
     flex-wrap: wrap;
 }
-
+.secondary-bg{
+    background: var(--secondary-clr);
+    padding-block: 2.2rem;
+}
 
 
 
