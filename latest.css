@@ -11,6 +11,7 @@
 
 
 /* Overlay background */
+
 .blog-box::before {
   content: '';
   position: absolute;
